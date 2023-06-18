@@ -46,5 +46,5 @@ Twitch's maximum video bitrate (6,000Kbps for plebeians like me) is what dictate
 - Max B-frames: 4
 - Audio bitrate: 320Kbps
 
-**Stuff tried**
-- - NVIDIA Broadcast for microphone noise cancelling: I was getting occasional drops in the audio. I tried setting process priority set to "realtime", but that did not fix the issue.
+**Rejected/failed setup**
+- NVIDIA Broadcast for microphone noise cancelling: I was getting occasional drops in the audio. I tried setting process priority set to "realtime", but that did not fix the issue.
