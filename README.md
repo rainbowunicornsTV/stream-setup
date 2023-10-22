@@ -21,18 +21,18 @@ Software:
 
 Audio chain:
 - Microphone: Microphone ➔ preamplifier ➔ audio interface ➔ OBS Studio
-- Desktop/game: Source ➔ VoiceMeeter (virtual input 1) ➔ OBS Studio (monitoring VoiceMeeter)
+- Game: Source ➔ VoiceMeeter (virtual input 3) ➔ OBS Studio (monitoring VoiceMeeter) (in Windows, I manually set games to send their audio to input 3, this is intended to prevent desktop audio from ever unintentionally ending up on stream)
 - Voice communications: Source ➔ VoiceMeeter (virtual input 2) ➔ OBS Studio (monitoring VoiceMeeter)
-- Excluded desktop audio (generally muted): Source ➔ VoiceMeeter (virtual input 3) ➔ OBS Studio (monitoring VoiceMeeter)
+- Excluded desktop audio (generally muted): Source ➔ VoiceMeeter (virtual input 1) ➔ OBS Studio (monitoring VoiceMeeter)
 
 Video chain:
 - Camera: Camera ➔ NVIDIA Broadcast ➔ OBS Studio (video capture device)
 - Camera (if multiple consumers required): Camera ➔ NVIDIA Broadcast ➔ SplitCam ➔ OBS Studio (video capture device)
-- Desktop/game: Source ➔ OBS Studio (game capture if working, otherwise display capture)
+- Game: Source ➔ OBS Studio (game capture)
 
 **OBS output to Twitch**
 
-Twitch's maximum video bitrate (6,000Kbps for plebeians like me) is what dictates most settings, trying to find a workable balance for quality.
+Due to no re-encoding/quality options, I am targeting 6,000Kbps video bitrate (Twitch recommended, better for poor connections/devices), trying to find a workable balance for quality.
 - Output (scaled) resolution: 1536x864 (bicubic)
 - FPS: 48
 - Video encoder: NVIDIA NVENC H.264
@@ -48,3 +48,4 @@ Twitch's maximum video bitrate (6,000Kbps for plebeians like me) is what dictate
 
 **Rejected/failed setup**
 - NVIDIA Broadcast for microphone noise cancelling: I was getting occasional drops in the audio. I tried setting process priority set to "realtime", but that did not fix the issue.
+- OBS NVIDIA background removal plugin: I found that this had noticeably more flickering around the edges than the NVIDIA Broadcast software.
